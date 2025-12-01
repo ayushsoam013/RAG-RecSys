@@ -140,4 +140,4 @@ with gr.Blocks(title="Recommendation System Comparison") as demo:
     )
 
 if __name__ == "__main__":
-    demo.launch(server_port=7860)
+    demo.launch(server_port=7860, share=True)
