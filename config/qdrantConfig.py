@@ -1,8 +1,15 @@
 from qdrant_client import QdrantClient
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 class QdrantClientWrapper:
     def __init__(self):
-        self.client = QdrantClient(url="http://localhost:6333")
+        self.client = QdrantClient(
+            url=os.getenv("QDRANT_URL"), 
+            api_key=os.getenv("QDRANT_API_KEY"),
+        )
 
     def check_connection(self):
         try:
